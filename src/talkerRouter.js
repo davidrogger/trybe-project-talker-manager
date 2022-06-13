@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 
-const { HTTP_OK_STATUS, HTTP_NOT_FOUND } = require('./defaultVariables');
+const { HTTP_OK_STATUS, HTTP_NOT_FOUND, HTTP_OK_CREATED } = require('./defaultVariables');
 
 const router = express.Router();
 
@@ -33,5 +33,12 @@ router.get('/:id', (req, res) => {
   
   return res.status(HTTP_OK_STATUS).json(selectedId);
 });
+
+router.post('/', [(req, res) => {
+  const { id, name, age, talk } = req.body;
+
+  const newSpeaker = { id, name, age, talk };
+  res.status(HTTP_OK_CREATED).json(newSpeaker);
+}]);
 
 module.exports = router;
