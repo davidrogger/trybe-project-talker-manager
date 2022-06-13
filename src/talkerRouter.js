@@ -5,6 +5,7 @@ const { HTTP_OK_STATUS, HTTP_NOT_FOUND, HTTP_OK_CREATED } = require('./defaultVa
 const tokenValidation = require('./tokenValidation');
 const nameValidation = require('./nameValidation');
 const ageValidation = require('./ageValidation');
+const talkValidation = require('./talkValidation');
 
 const router = express.Router();
 
@@ -37,7 +38,7 @@ router.get('/:id', (req, res) => {
   return res.status(HTTP_OK_STATUS).json(selectedId);
 });
 
-router.post('/', [tokenValidation, nameValidation, ageValidation, (req, res) => {
+router.post('/', [tokenValidation, nameValidation, ageValidation, talkValidation, (req, res) => {
   const { id, name, age, talk } = req.body;
 
   const newTalker = { id, name, age, talk };
