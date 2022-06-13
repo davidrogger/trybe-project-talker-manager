@@ -3,7 +3,7 @@ const { HTTP_BAD_REQUEST } = require('./defaultVariables');
 const isUndefined = (item, res) => {
   const itemName = Object.keys(item).join();
   if (!item[itemName]) {
-    res.status(HTTP_BAD_REQUEST).json({ message: `O campo ${itemName} é obrigatório` });
+    res.status(HTTP_BAD_REQUEST).json({ message: `O campo "${itemName}" é obrigatório` });
     return true;
   }
   return false;
