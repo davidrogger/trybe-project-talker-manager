@@ -5,10 +5,10 @@ const { HTTP_OK_STATUS, HTTP_NOT_FOUND } = require('./defaultVariables');
 
 const router = express.Router();
 
-const fileName = './talker.json';
+const filePath = '/app/talker.json';
 const encodingType = 'utf-8';
 
-const readFile = () => JSON.parse(fs.readFileSync(fileName, encodingType));
+const readFile = () => JSON.parse(fs.readFileSync(filePath, encodingType));
 
 router.get('/', (_req, res) => {
   const fileData = readFile();
@@ -22,6 +22,7 @@ router.get('/', (_req, res) => {
 
 router.get('/:id', (req, res) => {
   const fileData = readFile();
+  console.log(fileData);
   const { id } = req.params;
 
   const selectedId = fileData.find((user) => user.id === Number(id));
