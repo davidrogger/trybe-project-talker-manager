@@ -1,6 +1,7 @@
 const HTTP_OK_STATUS = 200;
-const HTTP_NOT_FOUND = 404;
+const HTTP_OK_CREATED = 201;
 const HTTP_BAD_REQUEST = 400;
+const HTTP_NOT_FOUND = 404;
 const PORT = '3000';
 
 module.exports = {
@@ -8,4 +9,5 @@ module.exports = {
   PORT,
   HTTP_NOT_FOUND,
   HTTP_BAD_REQUEST,
+  HTTP_OK_CREATED,
 };
