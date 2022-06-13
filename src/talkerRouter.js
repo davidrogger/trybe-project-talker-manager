@@ -22,7 +22,6 @@ router.get('/', (_req, res) => {
 
 router.get('/:id', (req, res) => {
   const fileData = readFile();
-  console.log(fileData);
   const { id } = req.params;
 
   const selectedId = fileData.find((user) => user.id === Number(id));
