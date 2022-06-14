@@ -1,19 +1,18 @@
 const express = require('express');
-const fs = require('fs');
 
 const { HTTP_OK_STATUS, HTTP_NOT_FOUND, HTTP_OK_CREATED } = require('./defaultVariables');
+
+// Middlewares
 const tokenValidation = require('./tokenValidation');
 const nameValidation = require('./nameValidation');
 const ageValidation = require('./ageValidation');
 const { talkValidation, watchedValidation, rateValidation } = require('./talkValidation');
+
+// Helpers
 const newLastId = require('./findLastId');
+const { readFile, addNewTalker } = require('./handlingDataFile');
 
 const router = express.Router();
-
-const filePath = '/app/talker.json';
-const encodingType = 'utf-8';
-
-const readFile = () => JSON.parse(fs.readFileSync(filePath, encodingType));
 
 router.get('/', (_req, res) => {
   const fileData = readFile();
@@ -49,10 +48,11 @@ router.post('/', [
   (req, res) => {
   const { name, age, talk } = req.body;
 
-  const fileDate = readFile();
-  const id = newLastId(fileDate);
+  const fileData = readFile();
+  const id = newLastId(fileData);
   const newTalker = { id, name, age, talk };
   res.status(HTTP_OK_CREATED).json(newTalker);
+  addNewTalker(fileData, newTalker);
 }]);
 
 module.exports = router;
