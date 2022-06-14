@@ -25,4 +25,12 @@ const deleteTalker = (data, id) => {
   fs.writeFileSync(filePath, JSON.stringify(data));
 };
 
-module.exports = { readFile, addNewTalker, editTalker, deleteTalker };
+const findData = (nameSample) => {
+  const data = readFile();
+  const personData = data.filter((person) => person.name.includes(nameSample));
+
+  if (!nameSample) return data;
+  return personData;
+};
+
+module.exports = { readFile, addNewTalker, editTalker, deleteTalker, findData };
