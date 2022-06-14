@@ -1,4 +1,4 @@
-const { HTTP_BAD_REQUEST } = require('./defaultVariables');
+const { HTTP_UNAUTHORIZED } = require('./defaultVariables');
 
 const tokenValidation = (req, res, next) => {
   const { authorization } = req.headers;
@@ -6,10 +6,10 @@ const tokenValidation = (req, res, next) => {
   const tokenValidLength = 16;
 
   if (!authorization) {
-    return res.status(HTTP_BAD_REQUEST).json({ message: 'Token não encontrado' });
+    return res.status(HTTP_UNAUTHORIZED).json({ message: 'Token não encontrado' });
   }
   if (authorization.length !== tokenValidLength) {
-    return res.status(HTTP_BAD_REQUEST).json({ message: 'Token inválido' });
+    return res.status(HTTP_UNAUTHORIZED).json({ message: 'Token inválido' });
   }
 
   next();
