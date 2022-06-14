@@ -15,10 +15,25 @@ const { talkValidation, watchedValidation, rateValidation } = require('./talkVal
 
 // Helpers
 const newLastId = require('./findLastId');
-const { readFile, addNewTalker, editTalker, deleteTalker } = require('./handlingDataFile');
+const {
+  readFile,
+  addNewTalker,
+  editTalker,
+  deleteTalker,
+  findData,
+} = require('./handlingDataFile');
+
 // const invalidEditId = require('./invalidEditId');
 
 const router = express.Router();
+
+router.get('/search', [
+  tokenValidation,
+  (req, res) => {
+    const { q } = req.query;
+    const talkerData = findData(q);
+    res.status(HTTP_OK_STATUS).json(talkerData);
+}]);
 
 router.get('/', (_req, res) => {
   const fileData = readFile();
