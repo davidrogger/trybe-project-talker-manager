@@ -10,4 +10,12 @@ const addNewTalker = (data, newTalker) => {
   fs.writeFileSync(filePath, JSON.stringify(newData));
 };
 
-module.exports = { readFile, addNewTalker };
+const editTalker = (data, id, update) => {
+  const indexPosition = data.findIndex((talker) => talker.id === id);
+  
+  const newData = [...data];
+  newData.splice(indexPosition, 1, update);
+  fs.writeFileSync(filePath, JSON.stringify(newData));
+};
+
+module.exports = { readFile, addNewTalker, editTalker };

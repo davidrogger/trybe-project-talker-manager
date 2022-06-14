@@ -10,7 +10,8 @@ const { talkValidation, watchedValidation, rateValidation } = require('./talkVal
 
 // Helpers
 const newLastId = require('./findLastId');
-const { readFile, addNewTalker } = require('./handlingDataFile');
+const { readFile, addNewTalker, editTalker } = require('./handlingDataFile');
+// const invalidEditId = require('./invalidEditId');
 
 const router = express.Router();
 
@@ -53,6 +54,26 @@ router.post('/', [
   const newTalker = { id, name, age, talk };
   res.status(HTTP_OK_CREATED).json(newTalker);
   addNewTalker(fileData, newTalker);
+}]);
+
+router.put('/:id', [
+  tokenValidation,
+  nameValidation,
+  ageValidation,
+  talkValidation,
+  watchedValidation,
+  rateValidation,
+  (req, res) => {
+  const id = Number(req.params.id);
+  const fileData = readFile();
+  
+  // if (invalidEditId(fileData, id, res)) return;
+
+  const { name, age, talk } = req.body;
+
+  const talkerUpdate = { id, name, age, talk };
+  res.status(HTTP_OK_STATUS).json(talkerUpdate);
+  editTalker(fileData, id, talkerUpdate);
 }]);
 
 module.exports = router;
