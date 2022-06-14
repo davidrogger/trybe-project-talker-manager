@@ -1,6 +1,11 @@
 const express = require('express');
 
-const { HTTP_OK_STATUS, HTTP_NOT_FOUND, HTTP_OK_CREATED } = require('./defaultVariables');
+const {
+  HTTP_OK_STATUS,
+  HTTP_NOT_FOUND, 
+  HTTP_OK_CREATED, 
+  HTTP_NO_CONTENT, 
+} = require('./defaultVariables');
 
 // Middlewares
 const tokenValidation = require('./tokenValidation');
@@ -10,7 +15,7 @@ const { talkValidation, watchedValidation, rateValidation } = require('./talkVal
 
 // Helpers
 const newLastId = require('./findLastId');
-const { readFile, addNewTalker, editTalker } = require('./handlingDataFile');
+const { readFile, addNewTalker, editTalker, deleteTalker } = require('./handlingDataFile');
 // const invalidEditId = require('./invalidEditId');
 
 const router = express.Router();
@@ -74,6 +79,15 @@ router.put('/:id', [
   const talkerUpdate = { id, name, age, talk };
   res.status(HTTP_OK_STATUS).json(talkerUpdate);
   editTalker(fileData, id, talkerUpdate);
+}]);
+
+router.delete('/:id', [
+  tokenValidation,
+  (req, res) => {
+    const id = Number(req.params.id);
+    const fileData = readFile();
+    deleteTalker(fileData, id);
+    res.status(HTTP_NO_CONTENT).end();
 }]);
 
 module.exports = router;
