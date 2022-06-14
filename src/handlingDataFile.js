@@ -18,4 +18,11 @@ const editTalker = (data, id, update) => {
   fs.writeFileSync(filePath, JSON.stringify(newData));
 };
 
-module.exports = { readFile, addNewTalker, editTalker };
+const deleteTalker = (data, id) => {
+  const indexPosition = data.findIndex((talker) => talker.id === id);
+
+  data.splice(indexPosition, 1);
+  fs.writeFileSync(filePath, JSON.stringify(data));
+};
+
+module.exports = { readFile, addNewTalker, editTalker, deleteTalker };
