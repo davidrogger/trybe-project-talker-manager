@@ -5,23 +5,23 @@ const {
   HTTP_NOT_FOUND, 
   HTTP_OK_CREATED, 
   HTTP_NO_CONTENT, 
-} = require('./defaultVariables');
+} = require('../src/defaultVariables');
 
 // Middlewares
-const tokenValidation = require('./tokenValidation');
-const nameValidation = require('./nameValidation');
-const ageValidation = require('./ageValidation');
-const { talkValidation, watchedValidation, rateValidation } = require('./talkValidation');
+const tokenValidation = require('../src/tokenValidation');
+const nameValidation = require('../src/nameValidation');
+const ageValidation = require('../src/ageValidation');
+const { talkValidation, watchedValidation, rateValidation } = require('../src/talkValidation');
 
 // Helpers
-const newLastId = require('./findLastId');
+const newLastId = require('../src/findLastId');
 const {
   readFile,
   addNewTalker,
   editTalker,
   deleteTalker,
   findData,
-} = require('./handlingDataFile');
+} = require('../src/handlingDataFile');
 
 // const invalidEditId = require('./invalidEditId');
 

@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const talkerRouter = require('./src/talkerRouter');
+const talkerRouter = require('./routers/talkerRouter');
 const loginRouter = require('./src/loginRouter');
 
 const { HTTP_OK_STATUS, PORT } = require('./src/defaultVariables');
