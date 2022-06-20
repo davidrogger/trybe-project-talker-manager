@@ -1,5 +1,5 @@
-const { HTTP_BAD_REQUEST } = require('./defaultVariables');
-const isUndefined = require('./isUndefined');
+const { HTTP_BAD_REQUEST } = require('../src/defaultVariables');
+const isUndefined = require('../src/isUndefined');
 
 const ageValidation = (req, res, next) => {
   const { age } = req.body;

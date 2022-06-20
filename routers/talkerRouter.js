@@ -8,10 +8,15 @@ const {
 } = require('../src/defaultVariables');
 
 // Middlewares
-const tokenValidation = require('../src/tokenValidation');
-const nameValidation = require('../src/nameValidation');
-const ageValidation = require('../src/ageValidation');
-const { talkValidation, watchedValidation, rateValidation } = require('../src/talkValidation');
+const tokenValidation = require('../middlewares/tokenValidation');
+const nameValidation = require('../middlewares/nameValidation');
+const ageValidation = require('../middlewares/ageValidation');
+
+const {
+   talkValidation,
+    watchedValidation,
+     rateValidation,
+     } = require('../middlewares/talkValidation');
 
 // Helpers
 const newLastId = require('../src/findLastId');
