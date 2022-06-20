@@ -1,6 +1,6 @@
-const invalidDate = require('./invalidDate');
-const { HTTP_BAD_REQUEST } = require('./defaultVariables');
-const isUndefined = require('./isUndefined');
+const invalidDate = require('../helpers/invalidDate');
+const { HTTP_BAD_REQUEST } = require('../helpers/defaultVariables');
+const isUndefined = require('../helpers/isUndefined');
 
 const talkValidation = (req, res, next) => {
   const { talk } = req.body;

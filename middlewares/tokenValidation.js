@@ -1,4 +1,4 @@
-const { HTTP_UNAUTHORIZED } = require('./defaultVariables');
+const { HTTP_UNAUTHORIZED } = require('../helpers/defaultVariables');
 
 const tokenValidation = (req, res, next) => {
   const { authorization } = req.headers;

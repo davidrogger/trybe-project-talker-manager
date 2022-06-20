@@ -4,7 +4,7 @@ const router = express.Router();
 
 const { HTTP_OK_STATUS } = require('../helpers/defaultVariables');
 const loginValidation = require('../middlewares/loginValidation');
-const tokenGenerate = require('../src/tokenGenerate');
+const tokenGenerate = require('../helpers/tokenGenerate');
 
 router.post('/', [loginValidation, (_req, res) => {
   const token = tokenGenerate();

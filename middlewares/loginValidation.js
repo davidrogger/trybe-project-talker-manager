@@ -1,8 +1,8 @@
-const isUndefined = require('./isUndefined');
-const invalidEmail = require('./invalidEmail');
-const invalidLength = require('./invalidLength');
+const isUndefined = require('../helpers/isUndefined');
+const invalidEmail = require('../helpers/invalidEmail');
+const invalidLength = require('../helpers/invalidLength');
 
-const { HTTP_BAD_REQUEST } = require('./defaultVariables');
+const { HTTP_BAD_REQUEST } = require('../helpers/defaultVariables');
 
 const loginValidation = (req, res, next) => {
   const { email, password } = req.body;
