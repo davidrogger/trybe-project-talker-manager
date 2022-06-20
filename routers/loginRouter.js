@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-const { HTTP_OK_STATUS } = require('../src/defaultVariables');
-const loginValidation = require('../src/loginValidation');
+const { HTTP_OK_STATUS } = require('../helpers/defaultVariables');
+const loginValidation = require('../middlewares/loginValidation');
 const tokenGenerate = require('../src/tokenGenerate');
 
 router.post('/', [loginValidation, (_req, res) => {

@@ -5,7 +5,7 @@ const {
   HTTP_NOT_FOUND, 
   HTTP_OK_CREATED, 
   HTTP_NO_CONTENT, 
-} = require('../src/defaultVariables');
+} = require('../helpers/defaultVariables');
 
 // Middlewares
 const tokenValidation = require('../middlewares/tokenValidation');
@@ -19,14 +19,14 @@ const {
      } = require('../middlewares/talkValidation');
 
 // Helpers
-const newLastId = require('../src/findLastId');
+const newLastId = require('../helpers/findLastId');
 const {
   readFile,
   addNewTalker,
   editTalker,
   deleteTalker,
   findData,
-} = require('../src/handlingDataFile');
+} = require('../helpers/handlingDataFile');
 
 // const invalidEditId = require('./invalidEditId');
 
