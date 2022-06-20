@@ -2,9 +2,9 @@ const express = require('express');
 
 const router = express.Router();
 
-const { HTTP_OK_STATUS } = require('./defaultVariables');
-const loginValidation = require('./loginValidation');
-const tokenGenerate = require('./tokenGenerate');
+const { HTTP_OK_STATUS } = require('../src/defaultVariables');
+const loginValidation = require('../src/loginValidation');
+const tokenGenerate = require('../src/tokenGenerate');
 
 router.post('/', [loginValidation, (_req, res) => {
   const token = tokenGenerate();
