@@ -2,7 +2,10 @@
 
 ## Seção: `Introdução ao desenvolvimento Web com Node.js`
 
-- lore
+- Foi apresentada o uso do Node.js detalhando mais o uso do npm, que ja era usado, ensinando a criar e usar scripts com ele.
+- Seguindo de uma introdução ao que é uma API, com detalhes sobre a arquitetura RESTful, aprensentando suas cinco principais caracteristicas, Uniform Interface, client-server, stateless, cacheable e layered system.
+- Então foi apresentado um framework, o Express para desenvolvimento web de APIs, usando middlewares e rotas.
+
 #
 <div align="center">
   <a href="#">
@@ -16,7 +19,7 @@
 #
 ## Projeto: `Talker Manager`
 
-- lore
+- Uma API de palestrantes onde é possivel, cadastrar, listar, pesquisar, editar e excluir palestrantes.
 
 # Tecnologias e ferramentas usadas 🛠
 
