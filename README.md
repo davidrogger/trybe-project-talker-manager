@@ -30,11 +30,13 @@
 
 # Desafios
 
-- lore
+- Desenvolver uma API com node.js
+- Estruturar a API usando as principais caracteristicas do RESTful
+- Organização do código, usando middlewares e routers de forma limpa e organizada.
 
 # Conclusão
 
-- lore
+- Uma API pequena, que estimulou aprendizados e organização com Express, reaproveitando middleware de forma a validar informações em diversas rotas diferentes sem repetir o código, tornando o código mais limpo e de fácil manutenção.
 
 </details>
 
