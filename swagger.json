@@ -63,7 +63,7 @@
     "/talker/search": {
       "get": {
         "summary": "Endpoint para busca por nome",
-        "description": "Rota para filtrar busca por nome do palestrante quando especificado, caso não haja especificação é retornado todos palestrantes cadastrados.",
+        "description": "Rota para filtrar busca por nome dos palestrantes quando especificado no parametro, caso não tenha especificação é retornado todos palestrantes cadastrados.",
         "tags": [
           "Talker"
         ],
