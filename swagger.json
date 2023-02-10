@@ -88,6 +88,30 @@
           }
         }
       }
+    },
+    "/talker/{id}": {
+      "get": {
+        "summary": "Endpoint para mostrar palestrante por id",
+        "description": "Rota busca informações sobre palestrante com base no parametro id.",
+        "tags": [
+          "Talker"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ID encontrado com sucesso."
+          },
+          "404": {
+            "description": "ID não encontrado."
+          }
+        }
+      }
     }
   },
   "components": {
