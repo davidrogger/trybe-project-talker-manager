@@ -50,10 +50,41 @@
       "get": {
         "summary": "Endpoint para mostrar palestrantes",
         "description": "Rota responsável por mostrar todos palestrantes cadastrados.",
-        "tags": ["Talker"],
+        "tags": [
+          "Talker"
+        ],
         "responses": {
           "200": {
             "description": "Busca realizada com sucesso."
+          }
+        }
+      }
+    },
+    "/talker/search": {
+      "get": {
+        "summary": "Endpoint para busca por nome",
+        "description": "Rota para filtrar busca por nome do palestrante quando especificado, caso não haja especificação é retornado todos palestrantes cadastrados.",
+        "tags": [
+          "Talker"
+        ],
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Nome que está sendo procurado"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Busca realizada com sucesso."
+          },
+          "401": {
+            "description": "Acesso não autorizado."
           }
         }
       }
@@ -71,6 +102,13 @@
             "type": "string"
           }
         }
+      }
+    },
+    "securitySchemes": {
+      "token": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
       }
     }
   }
