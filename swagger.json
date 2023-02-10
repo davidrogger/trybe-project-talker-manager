@@ -12,8 +12,8 @@
   "paths": {
     "/login": {
       "post": {
-        "summary": "Criação de token",
-        "description": "Rota responsável por gerar um token, para uso das demais rotas.",
+        "summary": "Endpoint para gerar token",
+        "description": "Rota responsável por gerar um token, para uso de algumas rotas.",
         "tags": [
           "Login"
         ],
@@ -42,6 +42,18 @@
           },
           "400": {
             "description": "Campo fora do padrão estabelecido."
+          }
+        }
+      }
+    },
+    "/talker": {
+      "get": {
+        "summary": "Endpoint para mostrar palestrantes",
+        "description": "Rota responsável por mostrar todos palestrantes cadastrados.",
+        "tags": ["Talker"],
+        "responses": {
+          "200": {
+            "description": "Busca realizada com sucesso."
           }
         }
       }
