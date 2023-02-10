@@ -62,16 +62,15 @@ router.get('/:id', (req, res) => {
   return res.status(HTTP_OK_STATUS).json(selectedId);
 });
 
+const validationMiddlewares = [
+  tokenValidation, nameValidation, ageValidation,
+  talkValidation, watchedValidation, rateValidation,
+];
+
 router.post('/', [
-  tokenValidation,
-  nameValidation,
-  ageValidation,
-  talkValidation,
-  watchedValidation,
-  rateValidation,
+  ...validationMiddlewares,
   (req, res) => {
   const { name, age, talk } = req.body;
-
   const fileData = readFile();
   const id = newLastId(fileData);
   const newTalker = { id, name, age, talk };
@@ -80,12 +79,7 @@ router.post('/', [
 }]);
 
 router.put('/:id', [
-  tokenValidation,
-  nameValidation,
-  ageValidation,
-  talkValidation,
-  watchedValidation,
-  rateValidation,
+  ...validationMiddlewares,
   (req, res) => {
   const id = Number(req.params.id);
   const fileData = readFile();
