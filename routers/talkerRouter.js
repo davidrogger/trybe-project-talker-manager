@@ -28,8 +28,6 @@ const {
   findData,
 } = require('../helpers/handlingDataFile');
 
-// const invalidEditId = require('./invalidEditId');
-
 const router = express.Router();
 
 router.get('/search', [
@@ -91,8 +89,6 @@ router.put('/:id', [
   (req, res) => {
   const id = Number(req.params.id);
   const fileData = readFile();
-  
-  // if (invalidEditId(fileData, id, res)) return;
 
   const { name, age, talk } = req.body;
 
