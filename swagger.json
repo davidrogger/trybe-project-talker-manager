@@ -1,0 +1,12 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Project Talker Manager",
+    "description": "Projeto prático realizado durante o modulo de backend na escola trybe, criando minha primeira API RESTful",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Davíd Roggér",
+      "url": "https://www.linkedin.com/in/davidrogger/"
+    }
+  }
+}
