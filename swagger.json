@@ -8,5 +8,58 @@
       "name": "Davíd Roggér",
       "url": "https://www.linkedin.com/in/davidrogger/"
     }
+  },
+  "paths": {
+    "/login": {
+      "post": {
+        "summary": "Criação de token",
+        "description": "Rota responsável por gerar um token, para uso das demais rotas.",
+        "tags": [
+          "Login"
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Para realizar o login com sucesso o e-mail deve seguir o padrão 'string@string.string' e a senha deve conter no mínimo 6 caracteres",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              },
+              "examples": {
+                "user": {
+                  "value": {
+                    "email": "emailvalido@email.com",
+                    "password": "123456"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Token Gerado com sucesso!"
+          },
+          "400": {
+            "description": "Campo fora do padrão estabelecido."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Login": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      }
+    }
   }
 }
