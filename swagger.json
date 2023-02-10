@@ -147,7 +147,10 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "description": "Preencha com o ID do palestrante para coletar as informações cadastradas."
+            "description": "Preencha com o ID do palestrante para coletar as informações cadastradas.",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -175,7 +178,10 @@
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "Preencha com o ID do palestrante que deseja atualizar as informações cadastrais."
+            "description": "Preencha com o ID do palestrante que deseja atualizar as informações cadastrais.",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
