@@ -47,7 +47,14 @@
 ### Requisitos
 *Nome* | *Avaliação*
 --- | :---:
-1 - lore| :heavy_check_mark:
+1 - Crie o endpoint GET /talker | :heavy_check_mark:
+2 - Crie o endpoint GET /talker/:id | :heavy_check_mark:
+3 - Crie o endpoint POST /login | :heavy_check_mark:
+4 - Adicione as validações para o endpoint /login | :heavy_check_mark:
+5 - Crie o endpoint POST /talker | :heavy_check_mark:
+6 - Crie o endpoint PUT /talker/:id | :heavy_check_mark:
+7 - Crie o endpoint DELETE /talker/:id | :heavy_check_mark:
+8 - Crie o endpoint GET /talker/search?q=searchTerm | :heavy_check_mark:
 
 </details>
 
