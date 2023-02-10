@@ -19,7 +19,7 @@
         ],
         "requestBody": {
           "required": true,
-          "description": "Para realizar o login com sucesso o e-mail deve seguir o padrão 'string@string.string' e a senha deve conter no mínimo 6 caracteres",
+          "description": "Para realizar o login com sucesso o e-mail deve seguir o padrão informado no schema.",
           "content": {
             "application/json": {
               "schema": {
@@ -56,6 +56,52 @@
         "responses": {
           "200": {
             "description": "Busca realizada com sucesso."
+          }
+        }
+      },
+      "post": {
+        "summary": "Endpoint para cadastrar palestrantes",
+        "description": "Rota responsável por cadastras novos palestrantes.",
+        "tags": [
+          "Talker"
+        ],
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Para realizar o cadastro com sucesso, é necessário preencher todos campos conforme o exemplo.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Talker"
+              },
+              "examples": {
+                "talker": {
+                  "value": {
+                    "name": "Jonas Doe",
+                    "age": "30",
+                    "talk": {
+                      "watchedAt": "10/02/2023",
+                      "rate": "4"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Acesso não autorizado, falta definir um token para acesso."
+          },
+          "400": {
+            "description": "Campo fora do padrão ou ausênte."
+          },
+          "201": {
+            "description": "Cadastro realizado com sucesso."
           }
         }
       }
@@ -120,10 +166,38 @@
         "type": "object",
         "properties": {
           "email": {
-            "type": "string"
+            "type": "string",
+            "description": "E-mail deve seguir o formato 'string@string.string'."
           },
           "password": {
-            "type": "string"
+            "type": "string",
+            "description": "Deve conter no mínimo 6 caracteres."
+          }
+        }
+      },
+      "Talker": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Mínimo de 3 caracteres."
+          },
+          "age": {
+            "type": "string",
+            "description": "Palestrante deve ser maior de 18 anos."
+          },
+          "talk": {
+            "type": "object",
+            "properties": {
+              "watchedAt": {
+                "type": "string",
+                "description": "Data deve estar no formato 'dd/mm/aaaa'."
+              },
+              "rate": {
+                "type": "string",
+                "description": "Número entre 1 e 5."
+              }
+            }
           }
         }
       }
