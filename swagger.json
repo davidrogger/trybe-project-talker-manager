@@ -146,7 +146,8 @@
           {
             "name": "id",
             "in": "path",
-            "required": true
+            "required": true,
+            "description": "Preencha com o ID do palestrante para coletar as informações cadastradas."
           }
         ],
         "responses": {
@@ -155,6 +156,63 @@
           },
           "404": {
             "description": "ID não encontrado."
+          }
+        }
+      },
+      "put": {
+        "summary": "Endpoint para atualizar palestrantes",
+        "description": "Rota responsavel por atualizar dados cadastrais de palestrantes",
+        "tags": [
+          "Talker"
+        ],
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "Preencha com o ID do palestrante que deseja atualizar as informações cadastrais."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Para realizar a atualização é necessário todos campos preenchidos.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Talker"
+              },
+              "examples": {
+                "talker": {
+                  "value": {
+                    "name": "Jonas",
+                    "age": "32",
+                    "talk": {
+                      "watchedAt": "11/02/2023",
+                      "rate": "5"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Campo fora do padrão ou ausênte."
+          },
+          "401": {
+            "description": "Acesso não autorizado, falta definir um token para acesso."
+          },
+          "404": {
+            "description": "ID não encontrado."
+          },
+          "200": {
+            "description": "Atualização realizada com sucesso."
           }
         }
       }
