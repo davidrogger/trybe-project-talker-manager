@@ -8,9 +8,13 @@
 
 #
 <div align="center">
-  <a href="#">
+  <a href="https://github.com/davidrogger/trybe-project-talker-manager/blob/readme-update/readme-imgs/project_top.webp">
     <img height="500px" width="30%" style="object-fit: cover" src="./readme-imgs/project_top.webp">
+  </a>
+  <a href="https://github.com/davidrogger/trybe-project-talker-manager/blob/readme-update/readme-imgs/project_mid.webp">
     <img height="500px" width="30%" style="object-fit: cover" src="./readme-imgs/project_mid.webp">
+  </a>
+  <a href="https://github.com/davidrogger/trybe-project-talker-manager/blob/readme-update/readme-imgs/project_bot.webp">
     <img height="500px" width="30%" style="object-fit: cover" src="./readme-imgs/project_bot.webp">
   </a>
 </div>
