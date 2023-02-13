@@ -82,7 +82,7 @@
     </strong>
   </summary>
 
-### Importante seguir a ordem apresentada a baixo, para o funcionamento.
+>### Importante seguir a ordem apresentada a baixo, para o funcionamento.
 
 <details>
 <summary>
@@ -107,7 +107,6 @@
   </summary>
 
   >Após clonar o respositório para iniciar o docker compose, você deve dentro da pasta raiz do projeto usar o comando: `docker-compose up -d`
-
   >Verifique se os container está funcionando usando o comando `docker ps` no terminal. Deve aparecer um container com o nome de *talker_manager*.
   </details>
 
@@ -121,6 +120,14 @@
   >Existem duas formas de acessar e testar as rotas:
   >1. Usando algum API Cliente, conforme citado nas configurações mínimas.
   >2. Acessando pelo navegador a documentação gerada pelao swagger `localhost:3000/api-docs`.
+
+  <details>
+  <summary>
+    :bus: <em>localhost:3000</em><strong>/login</strong>
+  </summary>
+
+  >Rota responsável por gerar um token, para acesso registro de algumas rotas da API.
+  </details>
   </details>
 </details>
 
