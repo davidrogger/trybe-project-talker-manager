@@ -85,17 +85,17 @@
   ### Importante seguir a ordem apresentada a baixo, para o funcionamento.
 
   <details>
-  <summary>
-    <strong>
-      ⚠️ Configurações mínimas para execução do projeto
-    </strong>
-  </summary>
+    <summary>
+      <strong>
+        ⚠️ Configurações mínimas para execução do projeto
+      </strong>
+    </summary>
 
-  - Sistema Operacional Distribuição Unix
-  - Node versão >= 16
-  - Docker
-  - Docker-compose versão >=1.29.2
-  - API Client ([Thunder Client](https://www.thunderclient.com/), [Insomnia](https://insomnia.rest/), [POSTMAN](https://www.postman.com/), ou algum outro de sua preferência)
+    - Sistema Operacional Distribuição Unix
+    - Node versão >= 16
+    - Docker
+    - Docker-compose versão >=1.29.2
+    - API Client ([Thunder Client](https://www.thunderclient.com/), [Insomnia](https://insomnia.rest/), [POSTMAN](https://www.postman.com/), ou algum outro de sua preferência)
 
   </details>
 
@@ -109,7 +109,6 @@
     Após clonar o respositório para iniciar o docker compose, você deve dentro da pasta raiz do projeto usar o comando: `docker-compose up -d`
 
     Verifique se os container está funcionando usando o comando `docker ps` no terminal. Deve aparecer um container com o nome de *talker_manager*.
-
   </details>
 
   <details>
@@ -120,9 +119,7 @@
     </summary>
 
     - lore
-
   </details>
-
 </details>
 
 #
