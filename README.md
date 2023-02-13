@@ -169,7 +169,7 @@
   > - **`talk`**: Deve ser um objecto contento seguintes chaves:
   >     - **`watchedAt`**: Deve conter a data da apresentação seguindo uma formatação `dd/mm/aaaa`
   >     - **`rate`**: Deve ser uma nota entre 1 e 5.
-    > ### Exemplo:
+  > ### Exemplo:
   >```
   >{
   >  "name": "Jonas Doe",
