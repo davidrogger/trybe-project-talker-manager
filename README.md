@@ -127,7 +127,7 @@
 
   <details>  
   <summary>
-    <span style="font-size: 1.5em;">Endpoint <code>/login</code></span>
+    <span>Endpoint <code>/login</code></span>
   </summary>
 
   ## POST - `localhost:3000/login`
