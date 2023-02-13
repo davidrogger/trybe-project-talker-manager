@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const path = __dirname;
-const filePath = `${path}/../talker.json`;
+const filePath = `${path}/../../talker.json`;
 const encodingType = 'utf-8';
 
 const readFile = () => JSON.parse(fs.readFileSync(filePath, encodingType));

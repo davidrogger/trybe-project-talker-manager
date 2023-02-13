@@ -4,10 +4,10 @@ const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
-const talkerRouter = require('./routers/talkerRouter');
-const loginRouter = require('./routers/loginRouter');
+const talkerRouter = require('./src/routers/talkerRouter');
+const loginRouter = require('./src/routers/loginRouter');
 
-const { HTTP_OK_STATUS, PORT } = require('./helpers/defaultVariables');
+const { HTTP_OK_STATUS, PORT } = require('./src/helpers/defaultVariables');
 
 const app = express();
 app.use(express.json());
