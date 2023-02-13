@@ -206,8 +206,9 @@
   >```
   >localhost:3000/talker/1
   >```
-  > Será retornado os dados do palestrante registrado com o ID apontado.
-  > Caso o ID não exista, é retornado um status 404.
+  > ### Status:
+  > - **`200`**: Em caso de sucesso, retorna com um json com os dados do ID indicado no parametro.
+  > - **`404`**: Quando o ID não é encontrato.
 
   ## PUT - `localhost:3000/talker/:id`
 
