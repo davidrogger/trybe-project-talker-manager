@@ -214,8 +214,10 @@
   > - Rota responsável por deletar cadastro do palestrante pelo ID.
   > - É necessário adicionar ao headers o token para executar esta requisição.
   > - Para deletar, é necessário realizar uma requisição usando o parametro apontando o ID que deseja deletar.
-  > - Exemplo de requisição:
-  > - localhost:3000/talker/`1`
+  > ### Exemplo:
+  >```
+  >localhost:3000/talker/1
+  >```
   > Será retornado estatus 204, quando realizado com sucesso.
   > Caso o ID não exista, é retornado um status 404.
 
