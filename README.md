@@ -132,7 +132,7 @@
   >- **`Senha`** é considerada válida quando possuir mais ou igual a 6 caracteres.
   </details>
 
-    <details>
+  <details>
   <summary>
     <strong>/talker</strong>
   </summary>
