@@ -185,8 +185,10 @@
   > - Rota responsável por buscar palestrante por nome.
   > - É necessário adicionar ao headers o token para executar esta requisição.
   > - Para buscar um palestrante, é necessário realizar uma requisição usando o parametro q seguindo do nome que deseja localizar.
-  > - Exemplo de requisição:
-  >     - localhost:3000/talker/search`?q=Henrique`
+  > ### Exemplo:
+  >```
+  >localhost:3000/talker/search?q=Henrique
+  >```
   > Será retornado todos palestrantes que contenha o nome Henrique em sua chave que representa o nome.
   > Caso nenhum parametro seja passado a API retorna todos palestrantes cadastrados.
 
@@ -194,8 +196,10 @@
 
   > - Rota responsável por buscar palestrante pelo ID.
   > - Para buscar um ID, é necessário realizar uma requisição usando o parametro apontando o ID que deseja localizar.
-  > - Exemplo de requisição:
-  > - localhost:3000/talker/`1`
+  > ### Exemplo:
+  >```
+  >localhost:3000/talker/1
+  >```
   > Será retornado os dados do palestrante registrado com o ID apontado.
   > Caso o ID não exista, é retornado um status 404.
 
