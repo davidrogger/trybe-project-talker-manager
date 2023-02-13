@@ -144,7 +144,9 @@
   >  "password": "123456"
   >}
   >```
-  > #
+  > ### Status:
+  > - **`200`**: Em caso de sucesso, retorna com um json com um token valido.
+  > - **`400`**: Caso algum campo não esteja preenchido ou esteja fora do padrão.
 
   </details>
 
