@@ -123,18 +123,18 @@
 
   >Existem duas formas de acessar e testar as rotas:
   >1. Usando algum API Cliente, conforme citado nas configurações mínimas.
-  >2. Acessando pelo navegador a documentação gerada pelao swagger `localhost:3000/api-docs`.
+  >2. Acessando a documentação gerada pelo swagger `localhost:3000/api-docs`.
 
-  <details>
+  <details>  
   <summary>
     <strong>/login</strong>
   </summary>
 
   ## POST - `localhost:3000/login`
 
-  >- Rota responsável por gerar um token, para acesso de algumas rotas da API.
-  >- Para gerar o token é necessário realizar uma requisição POST para URL: `localhost:3000/login` contendo um corpo json, com um e-mail e senha válidos.
-  >- **`E-mail`** é considerado válido quando ele segue um padrão de uma string sem limites de caracteres seguindo de `@` com outra string sem limites, com um ponto `.`, e após o ponto uma string com limite de 4 caracteres. `string@string.4str`.
+  > - Rota responsável por gerar um token, para acesso de algumas rotas da API.
+  > - Para gerar o token é necessário realizar uma requisição POST para URL: `localhost:3000/login` contendo um corpo json, com um e-mail e senha válidos.
+  > - **`E-mail`** é considerado válido quando ele segue um padrão de uma string sem limites de caracteres seguindo de `@` com outra string sem limites, com um ponto `.`, e após o ponto uma string com limite de 4 caracteres. `string@string.4str`.
   >- **`Senha`** é considerada válida quando possuir mais ou igual a 6 caracteres.
   </details>
 
@@ -156,6 +156,15 @@
   > - **`talk`**: Deve ser um objecto contento seguintes chaves:
   >     - **`watchedAt`**: Deve conter a data da apresentação seguindo uma formatação `dd/mm/aaaa`
   >     - **`rate`**: Deve ser uma nota entre 1 e 5.
+
+  ## GET - `localhost:3000/talker/search`
+
+  > - Rota responsável por buscar palestrante por nome.
+  > - Para buscar um palestrante, é necessário realizar uma requisição usando o parametro q seguindo do nome que deseja localizar.
+  > - Exemplo:
+  >     - localhost:3000/search`?q=Henrique`
+  > Será retornado todos palestrantes que contenha o nome Henrique em sua chave que representa o nome.
+  > Caso nenhum parametro seja passado a API retorna todos palestrantes cadastrados.
 
   </details>
 
