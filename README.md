@@ -50,17 +50,17 @@
   </summary>
 
  
-### Requisitos
-*Nome* | *Avaliação*
---- | :---:
-1 - Crie o endpoint GET /talker | :heavy_check_mark:
-2 - Crie o endpoint GET /talker/:id | :heavy_check_mark:
-3 - Crie o endpoint POST /login | :heavy_check_mark:
-4 - Adicione as validações para o endpoint /login | :heavy_check_mark:
-5 - Crie o endpoint POST /talker | :heavy_check_mark:
-6 - Crie o endpoint PUT /talker/:id | :heavy_check_mark:
-7 - Crie o endpoint DELETE /talker/:id | :heavy_check_mark:
-8 - Crie o endpoint GET /talker/search?q=searchTerm | :heavy_check_mark:
+  ### Requisitos
+  *Nome* | *Avaliação*
+  --- | :---:
+  1 - Crie o endpoint GET /talker | :heavy_check_mark:
+  2 - Crie o endpoint GET /talker/:id | :heavy_check_mark:
+  3 - Crie o endpoint POST /login | :heavy_check_mark:
+  4 - Adicione as validações para o endpoint /login | :heavy_check_mark:
+  5 - Crie o endpoint POST /talker | :heavy_check_mark:
+  6 - Crie o endpoint PUT /talker/:id | :heavy_check_mark:
+  7 - Crie o endpoint DELETE /talker/:id | :heavy_check_mark:
+  8 - Crie o endpoint GET /talker/search?q=searchTerm | :heavy_check_mark:
 
 </details>
 
@@ -82,22 +82,57 @@
     </strong>
   </summary>
 
-  ## Importante: seguir a ordem apresentada a baixo, para o funcionamento.
+    ## Importante: seguir a ordem apresentada a baixo, para o funcionamento.
+
+    <details>
+    <summary>
+      <strong>
+        ⚠️ Configurações mínimas para execução do projeto
+      </strong>
+    </summary>
+
+    - Sistema Operacional Distribuição Unix
+    - Node versão >= 16
+    - Docker
+    - Docker-compose versão >=1.29.2
+    - API Client ([Thunder Client](https://www.thunderclient.com/), [Insomnia](https://insomnia.rest/), [POSTMAN](https://www.postman.com/), ou algum outro de sua preferência)
+
+  </details>
 
   <details>
-  <summary>
-    <strong>
-      ⚠️ Configurações mínimas para execução do projeto
-    </strong>
-  </summary>
+    <summary>
+      <strong>
+        ⚠️ Inicie o docker-compose
+      </strong>
+    </summary>
 
-   - Sistema Operacional Distribuição Unix
-  - Node versão >= 16
-  - Docker
-  - Docker-compose versão >=1.29.2
-  - API Client ([Thunder Client](https://www.thunderclient.com/), [Insomnia](https://insomnia.rest/), [POSTMAN](https://www.postman.com/), ou algum outro de sua preferência)
+    Após clonar o respositório para iniciar o docker compose, você deve dentro da pasta raiz do projeto usar o comando: `docker-compose up -d`
 
-</details>
+    Verifique se os container está funcionando usando o comando `docker ps` no terminal. Deve aparecer um container com o nome de *talker_manager*.
+
+  </details>
+
+  <details>
+    <summary>
+      <strong>
+        🗂 Acessando as Rotas
+      </strong>
+    </summary>
+
+    Existem duas formas de acessar e testar as rotas, usando algum API Cliente, conforme citado nas configurações mínimas ou acessando no navegador a documentação gerada pelao swagger `localhost:3000/api-docs`.
+
+    ## Rotas
+
+    <details>
+    <summary>
+        :bus: <em>localhost:3000</em><strong>/login</strong>
+    </summary>
+
+    - lore
+
+  </details>
+
+  </details>
 
 </details>
 
