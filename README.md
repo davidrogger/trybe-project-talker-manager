@@ -85,30 +85,30 @@
 ### Importante seguir a ordem apresentada a baixo, para o funcionamento.
 
 <details>
-  <summary>
-    <strong>
-      ⚠️ Configurações mínimas para execução do projeto
-    </strong>
-  </summary>
+<summary>
+  <strong>
+    ⚠️ Configurações mínimas para execução do projeto
+  </strong>
+</summary>
 
-  - Sistema Operacional Distribuição Unix
-  - Node versão >= 16
-  - Docker
-  - Docker-compose versão >=1.29.2
-  - API Client ([Thunder Client](https://www.thunderclient.com/), [Insomnia](https://insomnia.rest/), [POSTMAN](https://www.postman.com/), ou algum outro de sua preferência)
+  >- Sistema Operacional Distribuição Unix
+  >- Node versão >= 16
+  >- Docker
+  >- Docker-compose versão >=1.29.2
+  >- API Client ([Thunder Client](https://www.thunderclient.com/), [Insomnia](https://insomnia.rest/), [POSTMAN](https://www.postman.com/), ou algum outro de sua preferência)
 
   </details>
 
   <details>
-    <summary>
-      <strong>
-        ⚠️ Inicie o docker-compose
-      </strong>
-    </summary>
+  <summary>
+    <strong>
+      ⚠️ Inicie o docker-compose
+    </strong>
+  </summary>
 
-    Após clonar o respositório para iniciar o docker compose, você deve dentro da pasta raiz do projeto usar o comando: `docker-compose up -d`
+  >Após clonar o respositório para iniciar o docker compose, você deve dentro da pasta raiz do projeto usar o comando: `docker-compose up -d`
 
-    Verifique se os container está funcionando usando o comando `docker ps` no terminal. Deve aparecer um container com o nome de *talker_manager*.
+  >Verifique se os container está funcionando usando o comando `docker ps` no terminal. Deve aparecer um container com o nome de *talker_manager*.
   </details>
 
   <details>
@@ -118,7 +118,9 @@
       </strong>
     </summary>
 
-    - lore
+  >Existem duas formas de acessar e testar as rotas:
+  >1. Usando algum API Cliente, conforme citado nas configurações mínimas.
+  >2. Acessando pelo navegador a documentação gerada pelao swagger `localhost:3000/api-docs`.
   </details>
 </details>
 
