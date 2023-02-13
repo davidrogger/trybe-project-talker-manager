@@ -119,18 +119,7 @@
       </strong>
     </summary>
 
-    Existem duas formas de acessar e testar as rotas, usando algum API Cliente, conforme citado nas configurações mínimas ou acessando no navegador a documentação gerada pelao swagger `localhost:3000/api-docs`.
-
-    ## Rotas
-
-    <details>
-      <summary>
-          :bus: <em>localhost:3000</em><strong>/login</strong>
-      </summary>
-
-      - lore
-
-    </details>
+    - lore
 
   </details>
 
