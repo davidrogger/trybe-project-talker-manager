@@ -215,6 +215,11 @@
   > - Rota responsável por atualizar dados do palestrante pelo ID.
   > - É necessário adicionar ao headers o token para executar esta requisição.
   > - Para atualizar, é necessário realizar uma requisição usando o parametro apontando o ID que deseja localizar com um corpo json com todos dados do palestrante seguindo o mesmo modelo json usado para cadastrar um novo palestrante.
+  > ### Status:
+  > - **`200`**: Em caso de sucesso, retorna com um json com os dados cadastrados atualizados do palestrante.
+  > - **`400`**: Caso algum campo não esteja preenchido ou esteja fora do padrão.
+  > - **`401`**: Quando o acesso não é autorizado, faltando definir um token para acesso.
+    > - **`404`**: Quando o ID não é encontrato.
 
   ## DELETE - `localhost:3000/talker/:id`
 
@@ -225,8 +230,10 @@
   >```
   >localhost:3000/talker/1
   >```
-  > Será retornado estatus 204, quando realizado com sucesso.
-  > Caso o ID não exista, é retornado um status 404.
+  > ### Status:
+  > - **`204`**: Em caso de sucesso, retorna somente o status 204(no content).
+  > - **`401`**: Quando o acesso não é autorizado, faltando definir um token para acesso.
+  > - **`404`**: Quando o ID não é encontrato.
 
   </details>
 
