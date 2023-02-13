@@ -152,7 +152,7 @@
 
   <details>
   <summary>
-      <span style="font-size: 1.5em;">Endpoint <code>/talker</code></span>
+      <span>Endpoint <code>/talker</code></span>
   </summary>
 
   ## GET - `localhost:3000/talker`
