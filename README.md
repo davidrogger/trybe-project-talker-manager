@@ -111,7 +111,7 @@
   </summary>
 
   >Após clonar o respositório para iniciar o docker compose, você deve dentro da pasta raiz do projeto usar o comando: `docker-compose up -d`
-  >Verifique se os container está funcionando usando o comando `docker ps` no terminal. Deve aparecer um container com o nome de *talker_manager*.
+  >Verifique os containers usando o comando `docker ps` no terminal. Deve aparecer um container com o nome de *talker_manager*.
   </details>
 
   <details>
