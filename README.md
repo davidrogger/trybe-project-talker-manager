@@ -123,10 +123,10 @@
 
   <details>
   <summary>
-    :bus: <em>localhost:3000</em><strong>/login</strong>
+    <strong>/login</strong>
   </summary>
 
-  >Rota responsável por gerar um token, para acesso registro de algumas rotas da API.
+  >Rota responsável por gerar um token, para acesso de algumas rotas da API.
   </details>
   </details>
 </details>
