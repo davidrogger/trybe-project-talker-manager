@@ -221,6 +221,40 @@
             "description": "Atualização realizada com sucesso."
           }
         }
+      },
+      "delete": {
+        "summary": "Endpoint para deletar palestrante",
+        "description": "Rota responsavel por deletar um palestrante cadastrado por seu ID.",
+        "tags": [
+          "Talker"
+        ],
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "Preencha com o ID do palestrante que deseja deletar o cadastro.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "ID deletado com sucesso."
+          },
+          "401": {
+            "description": "Acesso não autorizado, falta definir um token para acesso."
+          },
+          "404": {
+            "description": "ID não encontrado."
+          }
+        }
       }
     }
   },
