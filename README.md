@@ -180,6 +180,7 @@
   >  }
   >}
   >```
+  > ### Status:
   > - **`201`**: Em caso de sucesso, com um json com os dados cadastrados contendo o id do palestrante.
   > - **`400`**: Caso algum campo não esteja preenchido ou esteja fora do padrão.
   > - **`401`**: Quando o acesso não é autorizado, faltando definir um token para acesso.
