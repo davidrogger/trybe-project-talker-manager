@@ -82,20 +82,20 @@
     </strong>
   </summary>
 
-    ## Importante: seguir a ordem apresentada a baixo, para o funcionamento.
+  ## Importante: seguir a ordem apresentada a baixo, para o funcionamento.
 
-    <details>
-    <summary>
-      <strong>
-        ⚠️ Configurações mínimas para execução do projeto
-      </strong>
-    </summary>
+  <details>
+  <summary>
+    <strong>
+      ⚠️ Configurações mínimas para execução do projeto
+    </strong>
+  </summary>
 
-    - Sistema Operacional Distribuição Unix
-    - Node versão >= 16
-    - Docker
-    - Docker-compose versão >=1.29.2
-    - API Client ([Thunder Client](https://www.thunderclient.com/), [Insomnia](https://insomnia.rest/), [POSTMAN](https://www.postman.com/), ou algum outro de sua preferência)
+  - Sistema Operacional Distribuição Unix
+  - Node versão >= 16
+  - Docker
+  - Docker-compose versão >=1.29.2
+  - API Client ([Thunder Client](https://www.thunderclient.com/), [Insomnia](https://insomnia.rest/), [POSTMAN](https://www.postman.com/), ou algum outro de sua preferência)
 
   </details>
 
