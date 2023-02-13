@@ -82,7 +82,7 @@
     </strong>
   </summary>
 
-  ## Importante: seguir a ordem apresentada a baixo, para o funcionamento.
+  ### Importante seguir a ordem apresentada a baixo, para o funcionamento.
 
   <details>
   <summary>
@@ -124,13 +124,13 @@
     ## Rotas
 
     <details>
-    <summary>
-        :bus: <em>localhost:3000</em><strong>/login</strong>
-    </summary>
+      <summary>
+          :bus: <em>localhost:3000</em><strong>/login</strong>
+      </summary>
 
-    - lore
+      - lore
 
-  </details>
+    </details>
 
   </details>
 
