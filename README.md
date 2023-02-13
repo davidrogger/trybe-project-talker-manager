@@ -150,6 +150,7 @@
   ## POST - `localhost:3000/talker`
 
   > - Rota responsável por cadastrar palestrantes.
+  > - É necessário adicionar ao headers o token para executar esta requisição.
   > - Para cadastrar um palestrante, é necessário realizar uma requisição com um corpo json contendo os seguindos dados.
   > - **`name`**: Nome deve conter no mínimo 3 caracteres.
   > - **`age`**: Idade deve ser um número maior que 18, pois os palestrantes devem ser maiores de 18 anos.
@@ -160,8 +161,9 @@
   ## GET - `localhost:3000/talker/search`
 
   > - Rota responsável por buscar palestrante por nome.
+  > - É necessário adicionar ao headers o token para executar esta requisição.
   > - Para buscar um palestrante, é necessário realizar uma requisição usando o parametro q seguindo do nome que deseja localizar.
-  > - Exemplo:
+  > - Exemplo de requisição:
   >     - localhost:3000/talker/search`?q=Henrique`
   > Será retornado todos palestrantes que contenha o nome Henrique em sua chave que representa o nome.
   > Caso nenhum parametro seja passado a API retorna todos palestrantes cadastrados.
@@ -170,10 +172,24 @@
 
   > - Rota responsável por buscar palestrante pelo ID.
   > - Para buscar um ID, é necessário realizar uma requisição usando o parametro apontando o ID que deseja localizar.
-  > - Exemplo:
-  >     - localhost:3000/talker/`1`
+  > - Exemplo de requisição:
+  > - localhost:3000/talker/`1`
   > Será retornado os dados do palestrante registrado com o ID apontado.
   > Caso o ID não exista, é retornado um status 404.
+
+  ## PUT - `localhost:3000/talker/:id`
+
+  > - Rota responsável por atualizar dados do palestrante pelo ID.
+  > - É necessário adicionar ao headers o token para executar esta requisição.
+  > - Para atualizar, é necessário realizar uma requisição usando o parametro apontando o ID que deseja localizar com um corpo json com todos dados do palestrante.
+  > - Exemplo de requisição:
+  > - localhost:3000/talker/`1`
+  > - Exemplo de corpo:
+  > - **`name`**: Nome deve conter no mínimo 3 caracteres.
+  > - **`age`**: Idade deve ser um número maior que 18, pois os palestrantes devem ser maiores de 18 anos.
+  > - **`talk`**: Deve ser um objecto contento seguintes chaves:
+  >     - **`watchedAt`**: Deve conter a data da apresentação seguindo uma formatação `dd/mm/aaaa`
+  >     - **`rate`**: Deve ser uma nota entre 1 e 5.
 
   </details>
 
