@@ -265,7 +265,7 @@
         "properties": {
           "email": {
             "type": "string",
-            "description": "E-mail deve seguir o formato 'string@string.string'."
+            "description": "Padrão de e-mail deve ser uma string sem limites de caracteres seguindo de `@` com outra string sem limites, com um ponto `.`, e após o ponto uma string com limite de 4 caracteres. `string@string.4str`."
           },
           "password": {
             "type": "string",
