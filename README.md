@@ -167,6 +167,18 @@
   > - **`talk`**: Deve ser um objecto contento seguintes chaves:
   >     - **`watchedAt`**: Deve conter a data da apresentação seguindo uma formatação `dd/mm/aaaa`
   >     - **`rate`**: Deve ser uma nota entre 1 e 5.
+    > ### Exemplo:
+  >```
+  >{
+  >  "name": "Jonas Doe",
+  >  "age": "30",
+  >  "talk": {
+  >   "watchedAt": "10/02/2023",
+  >   "rate": "4"
+  >  }
+  >}
+  >```
+  > #
 
   ## GET - `localhost:3000/talker/search`
 
