@@ -1,0 +1,311 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Project Talker Manager",
+    "description": "Projeto prático realizado durante o modulo de backend na escola trybe, criando minha primeira API RESTful",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Davíd Roggér",
+      "url": "https://www.linkedin.com/in/davidrogger/"
+    }
+  },
+  "paths": {
+    "/login": {
+      "post": {
+        "summary": "Endpoint para gerar token",
+        "description": "Rota responsável por gerar um token, para uso de algumas rotas.",
+        "tags": [
+          "Login"
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Para realizar o login com sucesso o e-mail deve seguir o padrão informado no schema.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              },
+              "examples": {
+                "user": {
+                  "value": {
+                    "email": "emailvalido@email.com",
+                    "password": "123456"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Token Gerado com sucesso!"
+          },
+          "400": {
+            "description": "Campo fora do padrão estabelecido."
+          }
+        }
+      }
+    },
+    "/talker": {
+      "get": {
+        "summary": "Endpoint para mostrar palestrantes",
+        "description": "Rota responsável por mostrar todos palestrantes cadastrados.",
+        "tags": [
+          "Talker"
+        ],
+        "responses": {
+          "200": {
+            "description": "Busca realizada com sucesso."
+          }
+        }
+      },
+      "post": {
+        "summary": "Endpoint para cadastrar palestrantes",
+        "description": "Rota responsável por cadastras novos palestrantes.",
+        "tags": [
+          "Talker"
+        ],
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Para realizar o cadastro com sucesso, é necessário preencher todos campos conforme o exemplo.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Talker"
+              },
+              "examples": {
+                "talker": {
+                  "value": {
+                    "name": "Jonas Doe",
+                    "age": "30",
+                    "talk": {
+                      "watchedAt": "10/02/2023",
+                      "rate": "4"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "401": {
+            "description": "Acesso não autorizado, falta definir um token para acesso."
+          },
+          "400": {
+            "description": "Campo fora do padrão ou ausênte."
+          },
+          "201": {
+            "description": "Cadastro realizado com sucesso."
+          }
+        }
+      }
+    },
+    "/talker/search": {
+      "get": {
+        "summary": "Endpoint para busca por nome",
+        "description": "Rota para filtrar busca por nome dos palestrantes quando especificado no parametro, caso não tenha especificação é retornado todos palestrantes cadastrados.",
+        "tags": [
+          "Talker"
+        ],
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Nome que está sendo procurado"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Busca realizada com sucesso."
+          },
+          "401": {
+            "description": "Acesso não autorizado."
+          }
+        }
+      }
+    },
+    "/talker/{id}": {
+      "get": {
+        "summary": "Endpoint para mostrar palestrante por id",
+        "description": "Rota busca informações sobre palestrante com base no parametro id.",
+        "tags": [
+          "Talker"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Preencha com o ID do palestrante para coletar as informações cadastradas.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ID encontrado com sucesso."
+          },
+          "404": {
+            "description": "ID não encontrado."
+          }
+        }
+      },
+      "put": {
+        "summary": "Endpoint para atualizar palestrantes",
+        "description": "Rota responsavel por atualizar dados cadastrais de palestrantes",
+        "tags": [
+          "Talker"
+        ],
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "Preencha com o ID do palestrante que deseja atualizar as informações cadastrais.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Para realizar a atualização é necessário todos campos preenchidos.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Talker"
+              },
+              "examples": {
+                "talker": {
+                  "value": {
+                    "name": "Jonas",
+                    "age": "32",
+                    "talk": {
+                      "watchedAt": "11/02/2023",
+                      "rate": "5"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Campo fora do padrão ou ausênte."
+          },
+          "401": {
+            "description": "Acesso não autorizado, falta definir um token para acesso."
+          },
+          "404": {
+            "description": "ID não encontrado."
+          },
+          "200": {
+            "description": "Atualização realizada com sucesso."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Endpoint para deletar palestrante",
+        "description": "Rota responsavel por deletar um palestrante cadastrado por seu ID.",
+        "tags": [
+          "Talker"
+        ],
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "Preencha com o ID do palestrante que deseja deletar o cadastro.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "ID deletado com sucesso."
+          },
+          "401": {
+            "description": "Acesso não autorizado, falta definir um token para acesso."
+          },
+          "404": {
+            "description": "ID não encontrado."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Login": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "Padrão de e-mail deve ser uma string sem limites de caracteres seguindo de `@` com outra string sem limites, com um ponto `.`, e após o ponto uma string com limite de 4 caracteres. `string@string.4str`."
+          },
+          "password": {
+            "type": "string",
+            "description": "Deve conter no mínimo 6 caracteres."
+          }
+        }
+      },
+      "Talker": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Mínimo de 3 caracteres."
+          },
+          "age": {
+            "type": "string",
+            "description": "Palestrante deve ser maior de 18 anos."
+          },
+          "talk": {
+            "type": "object",
+            "properties": {
+              "watchedAt": {
+                "type": "string",
+                "description": "Data deve estar no formato 'dd/mm/aaaa'."
+              },
+              "rate": {
+                "type": "string",
+                "description": "Número entre 1 e 5."
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "token": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

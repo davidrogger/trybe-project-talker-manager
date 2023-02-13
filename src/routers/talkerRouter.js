@@ -2,7 +2,6 @@ const express = require('express');
 
 const {
   HTTP_OK_STATUS,
-  HTTP_NOT_FOUND, 
   HTTP_OK_CREATED, 
   HTTP_NO_CONTENT, 
 } = require('../helpers/defaultVariables');
@@ -11,6 +10,7 @@ const {
 const tokenValidation = require('../middlewares/tokenValidation');
 const nameValidation = require('../middlewares/nameValidation');
 const ageValidation = require('../middlewares/ageValidation');
+const idValidation = require('../middlewares/idValidation');
 
 const {
    talkValidation,
@@ -27,8 +27,6 @@ const {
   deleteTalker,
   findData,
 } = require('../helpers/handlingDataFile');
-
-// const invalidEditId = require('./invalidEditId');
 
 const router = express.Router();
 
@@ -50,30 +48,25 @@ router.get('/', (_req, res) => {
   return res.status(HTTP_OK_STATUS).json(fileData);
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', [
+  idValidation,
+  (req, res) => {
   const fileData = readFile();
   const { id } = req.params;
 
-  const selectedId = fileData.find((user) => user.id === Number(id));
-  if (!selectedId) {
- return res
-  .status(HTTP_NOT_FOUND)
-  .json({ message: 'Pessoa palestrante não encontrada' }); 
-}
-  
+  const selectedId = fileData.find((user) => user.id === Number(id));  
   return res.status(HTTP_OK_STATUS).json(selectedId);
-});
+}]);
+
+const validationMiddlewares = [
+  tokenValidation, nameValidation, ageValidation,
+  talkValidation, watchedValidation, rateValidation,
+];
 
 router.post('/', [
-  tokenValidation,
-  nameValidation,
-  ageValidation,
-  talkValidation,
-  watchedValidation,
-  rateValidation,
+  ...validationMiddlewares,
   (req, res) => {
   const { name, age, talk } = req.body;
-
   const fileData = readFile();
   const id = newLastId(fileData);
   const newTalker = { id, name, age, talk };
@@ -82,17 +75,10 @@ router.post('/', [
 }]);
 
 router.put('/:id', [
-  tokenValidation,
-  nameValidation,
-  ageValidation,
-  talkValidation,
-  watchedValidation,
-  rateValidation,
+  ...validationMiddlewares, idValidation,
   (req, res) => {
   const id = Number(req.params.id);
   const fileData = readFile();
-  
-  // if (invalidEditId(fileData, id, res)) return;
 
   const { name, age, talk } = req.body;
 
@@ -102,7 +88,7 @@ router.put('/:id', [
 }]);
 
 router.delete('/:id', [
-  tokenValidation,
+  tokenValidation, idValidation,
   (req, res) => {
     const id = Number(req.params.id);
     const fileData = readFile();
