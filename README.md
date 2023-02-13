@@ -82,11 +82,11 @@
 <details>
   <summary>
     <strong>
-      :memo: Instruções do  Projeto
+      :computer: Instruções do  Projeto
     </strong>
   </summary>
 
->### Importante seguir a ordem apresentada a baixo, para o funcionamento.
+> ### Importante seguir a ordem apresentada a baixo, para o funcionamento.
 
 <details>
 <summary>
@@ -95,11 +95,11 @@
   </strong>
 </summary>
 
-  >- Sistema Operacional Distribuição Unix
-  >- Node versão >= 16
-  >- Docker
-  >- Docker-compose versão >=1.29.2
-  >- API Client ([Thunder Client](https://www.thunderclient.com/), [Insomnia](https://insomnia.rest/), [POSTMAN](https://www.postman.com/), ou algum outro de sua preferência)
+  > - Sistema Operacional Distribuição Unix
+  > - Node versão >= 16
+  > - Docker
+  > - Docker-compose versão >=1.29.2
+  > - API Client ([Thunder Client](https://www.thunderclient.com/), [Insomnia](https://insomnia.rest/), [POSTMAN](https://www.postman.com/), ou algum outro de sua preferência)
 
   </details>
 
@@ -127,7 +127,7 @@
 
   <details>  
   <summary>
-    <strong>/login</strong>
+    <span style="font-size: 1.5em;">Endpoint <code>/login</code></span>
   </summary>
 
   ## POST - `localhost:3000/login`
@@ -152,7 +152,7 @@
 
   <details>
   <summary>
-    <strong>/talker</strong>
+      <span style="font-size: 1.5em;">Endpoint <code>/talker</code></span>
   </summary>
 
   ## GET - `localhost:3000/talker`
