@@ -191,6 +191,16 @@
   >     - **`watchedAt`**: Deve conter a data da apresentação seguindo uma formatação `dd/mm/aaaa`
   >     - **`rate`**: Deve ser uma nota entre 1 e 5.
 
+  ## DELETE - `localhost:3000/talker/:id`
+
+  > - Rota responsável por deletar cadastro do palestrante pelo ID.
+  > - É necessário adicionar ao headers o token para executar esta requisição.
+  > - Para deletar, é necessário realizar uma requisição usando o parametro apontando o ID que deseja deletar.
+  > - Exemplo de requisição:
+  > - localhost:3000/talker/`1`
+  > Será retornado estatus 204, quando realizado com sucesso.
+  > Caso o ID não exista, é retornado um status 404.
+
   </details>
 
   </details>
