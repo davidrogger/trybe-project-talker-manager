@@ -207,15 +207,7 @@
 
   > - Rota responsável por atualizar dados do palestrante pelo ID.
   > - É necessário adicionar ao headers o token para executar esta requisição.
-  > - Para atualizar, é necessário realizar uma requisição usando o parametro apontando o ID que deseja localizar com um corpo json com todos dados do palestrante.
-  > - Exemplo de requisição:
-  > - localhost:3000/talker/`1`
-  > - Exemplo de corpo:
-  > - **`name`**: Nome deve conter no mínimo 3 caracteres.
-  > - **`age`**: Idade deve ser um número maior que 18, pois os palestrantes devem ser maiores de 18 anos.
-  > - **`talk`**: Deve ser um objecto contento seguintes chaves:
-  >     - **`watchedAt`**: Deve conter a data da apresentação seguindo uma formatação `dd/mm/aaaa`
-  >     - **`rate`**: Deve ser uma nota entre 1 e 5.
+  > - Para atualizar, é necessário realizar uma requisição usando o parametro apontando o ID que deseja localizar com um corpo json com todos dados do palestrante seguindo o mesmo modelo json usado para cadastrar um novo palestrante.
 
   ## DELETE - `localhost:3000/talker/:id`
 
