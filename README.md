@@ -194,8 +194,9 @@
   >```
   >localhost:3000/talker/search?q=Henrique
   >```
-  > Será retornado todos palestrantes que contenha o nome Henrique em sua chave que representa o nome.
-  > Caso nenhum parametro seja passado a API retorna todos palestrantes cadastrados.
+  > ### Status:
+  > - **`200`**: Em caso de sucesso, retorna um json todos palestrantes que contém o nome usado no parametro. Caso seja passado um parametro vazio `?q=`, é retornado todos palestrantes cadastrados.
+  > - **`401`**: Quando o acesso não é autorizado, faltando definir um token para acesso.
 
   ## GET - `localhost:3000/talker/:id`
 
