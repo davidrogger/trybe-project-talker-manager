@@ -130,8 +130,10 @@
     <strong>/login</strong>
   </summary>
 
+  ## POST - `localhost:3000/login`
+
   >- Rota responsável por gerar um token, para acesso de algumas rotas da API.
-  >- Para gerar o token é necessário realizar uma requisição POST para URL: `localhost:3000/login` contendo um corpo, com um e-mail e senha válidos.
+  >- Para gerar o token é necessário realizar uma requisição POST para URL: `localhost:3000/login` contendo um corpo json, com um e-mail e senha válidos.
   >- **`E-mail`** é considerado válido quando ele segue um padrão de uma string sem limites de caracteres seguindo de `@` com outra string sem limites, com um ponto `.`, e após o ponto uma string com limite de 4 caracteres. `string@string.4str`.
   >- **`Senha`** é considerada válida quando possuir mais ou igual a 6 caracteres.
   </details>
@@ -141,8 +143,20 @@
     <strong>/talker</strong>
   </summary>
 
+  ## GET - `localhost:3000/talker`
+
   >- Rota responsável por apresentar todos palestrantes cadastrados.
-  >- Para visualizar os palestrantes, é necessário realizar uma requisição GET para URL: `localhost:3000/talker`.
+
+  ## POST - `localhost:3000/talker`
+
+  > - Rota responsável por cadastrar palestrantes.
+  > - Para cadastrar um palestrante, é necessário realizar uma requisição com um corpo json contendo os seguindos dados.
+  > - **`name`**: Nome deve conter no mínimo 3 caracteres.
+  > - **`age`**: Idade deve ser um número maior que 18, pois os palestrantes devem ser maiores de 18 anos.
+  > - **`talk`**: Deve ser um objecto contento seguintes chaves:
+  >     - **`watchedAt`**: Deve conter a data da apresentação seguindo uma formatação `dd/mm/aaaa`
+  >     - **`rate`**: Deve ser uma nota entre 1 e 5.
+
   </details>
 
   </details>
