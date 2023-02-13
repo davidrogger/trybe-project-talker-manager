@@ -126,8 +126,8 @@
     <strong>/login</strong>
   </summary>
 
-  >-Rota responsável por gerar um token, para acesso de algumas rotas da API.
-  >-Para gerar o token é necessário realizar uma requisição POST para URL: `localhost:3000/login` contendo um corpo, com um e-mail e senha válidos.
+  >- Rota responsável por gerar um token, para acesso de algumas rotas da API.
+  >- Para gerar o token é necessário realizar uma requisição POST para URL: `localhost:3000/login` contendo um corpo, com um e-mail e senha válidos.
   >- **`E-mail`** é considerado válido quando ele segue um padrão de uma string sem limites de caracteres seguindo de `@` com outra string sem limites, com um ponto `.`, e após o ponto uma string com limite de 4 caracteres. `string@string.4str`.
   >- **`Senha`** é considerada válida quando possuir mais ou igual a 6 caracteres.
   </details>
@@ -137,8 +137,8 @@
     <strong>/talker</strong>
   </summary>
 
-  >-Rota responsável apresentar todos palestrantes cadastrados.
-  >-Para visualizar os palestrantes, é necessário realizar uma requisição GET para URL: `localhost:3000/talker`.
+  >- Rota responsável por apresentar todos palestrantes cadastrados.
+  >- Para visualizar os palestrantes, é necessário realizar uma requisição GET para URL: `localhost:3000/talker`.
   </details>
 
   </details>
