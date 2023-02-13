@@ -158,6 +158,7 @@
   ## GET - `localhost:3000/talker`
 
   >- Rota responsável por apresentar todos palestrantes cadastrados.
+  > - **`200`**: Em caso de sucesso, retorna com um json todos palestrantes cadastrados.
 
   ## POST - `localhost:3000/talker`
 
